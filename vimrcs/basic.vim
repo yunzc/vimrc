@@ -214,12 +214,6 @@ map <C-space> ?
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
-" Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
 
@@ -315,6 +309,13 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
+if has('python')
+  map <C-K> :pyf /usr/share/clang/clang-format-10/clang-format.py<cr>
+  imap <C-K> <c-o>:pyf /usr/share/clang/clang-format-10/clang-format.py<cr>
+elseif has('python3')
+  map <C-K> :py3f /usr/share/clang/clang-format-10/clang-format.py<cr>
+  imap <C-K> <c-o>:py3f /usr/share/clang/clang-format-10/clang-format.py<cr>
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
